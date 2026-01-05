@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockVault | Professional IPO Simulator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="dark-theme">
+    <div id="app">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <span class="icon">📈</span>
+                <span class="text">StockVault</span>
+            </div>
+            <ul class="nav-links">
+                <li data-page="home" class="active"><span class="icon">🏠</span><span class="text">Home</span></li>
+                <li data-page="market"><span class="icon">📊</span><span class="text">Market</span></li>
+                <li data-page="portfolio"><span class="icon">💼</span><span class="text">Portfolio</span></li>
+                <li data-page="news"><span class="icon">📰</span><span class="text">Market News</span></li>
+            </ul>
+
+            <div class="profile-actions" style="margin-bottom: 2rem;">
+                <button id="download-profile" class="btn-secondary" title="Export Profile">📥 Export JSON</button>
+                <button id="upload-trigger" class="btn-secondary" style="margin-top: 0.5rem;" title="Import Profile">📤
+                    Import JSON</button>
+                <input type="file" id="import-profile" accept=".json" style="display: none;">
+            </div>
+
+            <div class="user-info-mini">
+                <div class="balance-label">Available Balance</div>
+                <div id="sidebar-balance" class="balance-value">₹0.00</div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <header class="top-bar">
+                <div class="ticker-wrap" id="ticker-wrap">
+                    <!-- Tickers injected here -->
+                </div>
+                <div class="controls">
+                    <div class="time-control-group">
+                        <span class="time-label">TIME</span>
+                        <button class="time-btn" data-days="1" title="Advance 1 Day">+1D</button>
+                        <button class="time-btn" data-days="7" title="Advance 1 Week">+7D</button>
+                        <button class="time-btn" data-days="30" title="Advance 1 Month">+1M</button>
+                        <button class="time-btn" data-days="365" title="Advance 1 Year">+1Y</button>
+                    </div>
+
+                    <button id="theme-toggle" class="time-btn" title="Toggle Theme"
+                        style="font-size: 1.2rem; padding: 0.5rem;">
+                        ☀️
+                    </button>
+
+                    <div class="settings-toggle" style="display:flex; align-items:center;">
+                        <label class="switch" title="Beginner Mode" style="margin-left:0.5rem; margin-right:0;">
+                            <input type="checkbox" id="mode-toggle">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+            </header>
+
+            <div id="page-content" class="page-container">
+                <!-- Dynamic Content Injected Here -->
+            </div>
+
+            <footer class="legal-disclaimer">
+                <p>⚠️ <strong>Disclaimer:</strong> This is a simulated stock market. No real trading or financial advice
+                    involved.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>
